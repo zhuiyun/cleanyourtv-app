@@ -75,4 +75,5 @@
     <string name="helper_card_escape">在电视上打开“设置”→“无障碍”→“Home 键”，也可以关闭此功能。</string>
     <string name="helper_card_apps_only">Google TV 仍会在后台运行。“仅应用”模式可以减少后台活动，但也会关闭搜索和语音助手；你可以在电视设置中重新启用它们。</string>
     <string name="helper_card_switch_off">关闭</string>
+    <string name="home_google_tv_settings_key">在 Google TV 上，遥控器的设置（齿轮）键会打开 Google TV 自带的设置面板。在许多电视上，这个面板还包含当前输入源的画面和声音设置。使用新主屏幕后，此按键可能无法正常工作。要恢复它，请选择“使用电视自带主屏幕”。</string>
 </resources>

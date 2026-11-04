@@ -338,4 +338,10 @@
         <item quantity="one">之前还有 %d 个步骤</item>
         <item quantity="other">之前还有 %d 个步骤</item>
     </plurals>
+    <string name="cyt_address_title">输入电视地址</string>
+    <string name="cyt_address_body">在电视上打开“设置”→“网络”，Wi-Fi 信息中会显示类似 192.168.1.50 的地址。</string>
+    <string name="cyt_address_field_label">电视地址</string>
+    <string name="cyt_address_error">这不是家庭网络中的有效地址</string>
+    <string name="cyt_address_connect">连接</string>
 </resources>
+

@@ -334,4 +334,7 @@
     <string name="helper_consent_off">你可以随时关闭此功能：在此处关闭、使用“撤销”，或在电视上打开“设置”→“无障碍”→“Home 键”。</string>
     <string name="helper_consent_yes">启用辅助程序</string>
     <string name="helper_consent_no">暂不</string>
+    <string name="found_google_tv_settings_key">在 Google TV 上，遥控器的设置（齿轮）键会打开 Google TV 自带的设置面板。在许多电视上，这个面板还包含当前输入源的画面和声音设置。使用新主屏幕后，此按键可能无法正常工作。要恢复它，请在“主屏幕”页面选择“使用电视自带主屏幕”。</string>
+    <string name="stop_home_low_storage_body">电视的存储空间几乎已满（剩余 {free, plural, other {# MB}}），因此无法安装新主屏幕。电视自带主屏幕保持不变，其他已完成的操作都会保留。请在电视的“设置”→“存储”中释放一些空间，然后重新运行设置。</string>
+    <string name="stop_home_chooser_body">{count, plural, one {电视上安装了另一个主屏幕应用（{names}），因此 Android 询问要使用哪个主屏幕，导致切换未能完成。我们已恢复电视自带主屏幕。请在电视上卸载该应用，然后重新运行设置。} other {电视上安装了其他主屏幕应用（{names}），因此 Android 询问要使用哪个主屏幕，导致切换未能完成。我们已恢复电视自带主屏幕。请在电视上卸载这些应用，然后重新运行设置。}}</string>
 </resources>
