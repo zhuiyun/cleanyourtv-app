@@ -72,7 +72,10 @@ jobs:
           "$APKSIGNER" sign --ks "$RUNNER_TEMP/signing/cyt-release.jks" \
             --ks-key-alias "$KEY_ALIAS" --ks-pass env:STORE_PASSWORD \
             --key-pass env:KEY_PASSWORD --out dist/CleanYourTV-zh-CN.apk dist/CleanYourTV-zh-CN-unsigned.apk
-          "$APKSIGNER" verify --verbose --print-certs dist/CleanYourTV-zh-CN.apk
+          VERIFY_OUTPUT="$("$APKSIGNER" verify --verbose --print-certs dist/CleanYourTV-zh-CN.apk 2>&1)"
+          printf '%s\\n' "$VERIFY_OUTPUT"
+          EXPECTED='A7:5A:27:8D:80:B7:61:1F:BC:F3:3F:10:C8:CC:0A:46:28:75:16:F7:C4:92:D0:FF:A0:40:C7:2C:7D:F0:3A:67'
+          printf '%s\\n' "$VERIFY_OUTPUT" | grep -Fqi "$EXPECTED" || { echo "::error::APK signer certificate does not match signing/zh-cn-release-cert.pem"; exit 1; }
           sha256sum dist/CleanYourTV-zh-CN.apk > dist/SHA256SUMS.txt
           rm -f "$RUNNER_TEMP/signing/cyt-release.jks"
 
