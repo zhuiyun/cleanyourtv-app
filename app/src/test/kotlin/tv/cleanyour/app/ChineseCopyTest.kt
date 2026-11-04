@@ -1,12 +1,13 @@
 package tv.cleanyour.app
 
-import android.icu.text.MessageFormat
+import android.icu.text.MessagePattern
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.w3c.dom.Element
 import java.io.File
-import java.util.Locale
+import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlin.test.fail
@@ -14,23 +15,73 @@ import kotlin.test.fail
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = android.app.Application::class)
 class ChineseCopyTest {
-    private data class Copy(val text: String, val translatable: Boolean)
-    private val string = Regex("<string name=\"([a-z0-9_]+)\"([^>]*)>(.*?)</string>", RegexOption.DOT_MATCHES_ALL)
+    private data class Copy(val kind: String, val variants: Map<String, String>, val translatable: Boolean)
+
+    private fun text(element: Element): String = element.textContent.replace("\\'", "'").replace("\\\"", "\"")
 
     private fun read(file: File): Map<String, Copy> {
+        val nodes = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file).documentElement.childNodes
         val result = linkedMapOf<String, Copy>()
-        for (match in string.findAll(file.readText())) {
-            val (name, attributes, raw) = match.destructured
-            val text = raw.replace("\\'", "'").replace("\\\"", "\"")
-                .replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+        for (i in 0 until nodes.length) {
+            val element = nodes.item(i) as? Element ?: continue
+            if (element.tagName !in setOf("string", "plurals")) continue
+            val name = element.getAttribute("name")
             assertTrue(name !in result, "${file.path}: duplicate $name")
-            result[name] = Copy(text, "translatable=\"false\"" !in attributes)
+            val variants = if (element.tagName == "string") mapOf("" to text(element)) else {
+                val items = element.getElementsByTagName("item")
+                val values = linkedMapOf<String, String>()
+                for (j in 0 until items.length) {
+                    val item = items.item(j) as Element
+                    val quantity = item.getAttribute("quantity")
+                    assertTrue(quantity !in values, "${file.path}: duplicate $name/$quantity")
+                    values[quantity] = text(item)
+                }
+                assertTrue("other" in values, "${file.path}: $name needs an other quantity")
+                values
+            }
+            result[name] = Copy(element.tagName, variants, element.getAttribute("translatable") != "false")
         }
         return result
     }
 
-    // Catch new untranslated copy, moved resource names and broken ICU patterns during upstream syncs.
-    @Test fun simplifiedChineseCoversEveryResourceAndPreservesIcuArguments() {
+    // Include nested arguments: Chinese may move a value out of an English plural clause.
+    private fun icuArguments(text: String): Set<String> {
+        val pattern = MessagePattern(text)
+        return (0 until pattern.countParts()).map { pattern.getPart(it) }
+            .filter { it.type == MessagePattern.Part.Type.ARG_NAME || it.type == MessagePattern.Part.Type.ARG_NUMBER }
+            .map { pattern.getSubstring(it) }.toSet()
+    }
+
+    private val printf = Regex("%(?:(\\d+)\\$)?([-#+ 0,(<]*)(?:\\d+)?(?:\\.\\d+)?([tT])?([a-zA-Z%])")
+
+    private fun printfArguments(text: String): Set<Pair<Int, String>> {
+        var next = 1
+        var previous = 0
+        val result = linkedSetOf<Pair<Int, String>>()
+        for (match in printf.findAll(text)) {
+            val (explicit, flags, date, conversion) = match.destructured
+            if (conversion == "%" || conversion == "n") continue
+            val index = when {
+                explicit.isNotEmpty() -> explicit.toInt()
+                '<' in flags -> previous
+                else -> next++
+            }
+            assertTrue(index > 0, "invalid printf argument in $text")
+            previous = index
+            result += index to (date + conversion)
+        }
+        return result
+    }
+
+    @Test fun nestedArgumentsCanMoveAcrossPluralClauses() {
+        assertEquals(icuArguments("{total, plural, other {{off} of # off}}"),
+            icuArguments("已关闭 {off} 项，共 {total} 项"))
+        assertEquals(setOf("count", "names"), icuArguments("{count, plural, other {{names}}}"))
+        assertEquals(setOf(1 to "s", 2 to "d"), printfArguments("%2\$d %1\$s %%"))
+    }
+
+    // Catch untranslated or moved resource names, malformed ICU and changed formatting arguments.
+    @Test fun simplifiedChineseCoversEveryResourceAndPreservesArguments() {
         val root = File(System.getProperty("cleanyourtv.repoRoot") ?: error("no repo root"))
         val modules = listOf("app", "ui/design", "feature/connect", "feature/setup", "feature/manage",
             "feature/launcher", "feature/modules", "feature/backup", "tv/curtain")
@@ -49,14 +100,17 @@ class ChineseCopyTest {
                 for ((name, source) in english) {
                     if (!source.translatable && name !in chinese) continue
                     val translated = chinese[name] ?: fail("${chineseFile.path}: missing $name")
-                    assertTrue(translated.text.isNotBlank(), "${chineseFile.path}: blank $name")
-                    try {
-                        val sourceFormat = MessageFormat(source.text, Locale.ENGLISH)
-                        val translatedFormat = MessageFormat(translated.text, Locale.SIMPLIFIED_CHINESE)
-                        assertEquals(sourceFormat.argumentNames, translatedFormat.argumentNames,
-                            "${chineseFile.path}: $name changed ICU arguments")
-                    } catch (error: IllegalArgumentException) {
-                        fail("${chineseFile.path}: $name: ${error.message}")
+                    assertEquals(source.kind, translated.kind, "${chineseFile.path}: $name changed resource type")
+                    for ((quantity, value) in translated.variants) {
+                        val original = source.variants[quantity] ?: source.variants.getValue("other")
+                        val label = "${chineseFile.path}: $name/$quantity"
+                        assertTrue(value.isNotBlank(), "$label is blank")
+                        try {
+                            assertEquals(icuArguments(original), icuArguments(value), "$label changed ICU arguments")
+                        } catch (error: IllegalArgumentException) {
+                            fail("$label: ${error.message}")
+                        }
+                        assertEquals(printfArguments(original), printfArguments(value), "$label changed printf arguments")
                     }
                     checked++
                 }
