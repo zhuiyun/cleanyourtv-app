@@ -56,4 +56,18 @@
     <string name="index_failure_unknown_key">模块列表使用了无法识别的密钥签名，因此没有使用该列表。电视上的内容未受影响。</string>
     <string name="index_failure_revoked_key">模块列表使用的签名密钥已被撤销，因此没有使用该列表。电视上的内容未受影响。</string>
     <string name="index_failure_bad_keys_file">受信任密钥列表未通过检查，因此没有使用模块列表。电视上的内容未受影响。</string>
+    <string name="module_checks">{count, plural, =0 {已自动检查：文件与作者发布的版本一致，且未请求任何权限。} one {已自动检查：文件与作者发布的版本一致，且仅请求上方列出的 # 项权限。} other {已自动检查：文件与作者发布的版本一致，且仅请求上方列出的 # 项权限。}}</string>
+    <string name="cardprompt_art_cd">电视正在询问：{name} 想在主屏幕上添加卡片。密钥为 {key}。可选择“保持隐藏”或“显示卡片”。</string>
+    <string name="index_failure_expired">模块列表已过期。请连接互联网并刷新列表。</string>
+    <string name="index_failure_rollback">收到的模块列表比当前保存的版本旧，因此我们保留了较新的列表。</string>
+    <string name="index_failure_malformed">无法读取模块列表，请稍后重试。</string>
+    <string name="index_stale_warning">模块列表可能已过期；联网后请刷新。</string>
+    <string name="fetch_failure_offline">手机当前未连接互联网。请联网后重试。</string>
+    <string name="fetch_failure_host_not_allowed">下载来源不在允许范围内，因此已停止下载。没有安装任何内容。</string>
+    <string name="fetch_failure_http_error">下载网站返回错误（{code}）。请稍后重试。</string>
+    <string name="fetch_failure_too_large">下载文件超出预期大小，因此已停止。没有安装任何内容。</string>
+    <string name="fetch_failure_hash_mismatch">下载文件与作者发布的版本不一致，因此没有安装。</string>
+    <string name="fetch_failure_size_mismatch">下载文件大小与列表记录不一致，因此已停止。没有安装任何内容。</string>
+    <string name="fetch_failure_signer_mismatch">此应用的签名者与列表中的作者不一致，因此没有安装。</string>
+    <string name="fetch_failure_try_again">重试</string>
 </resources>
