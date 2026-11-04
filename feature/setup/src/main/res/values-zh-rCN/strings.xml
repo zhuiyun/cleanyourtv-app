@@ -6,4 +6,58 @@
 <string name="probing_line">正在读取电视上的信息……</string><string name="probing_progress_cd">正在读取电视上的信息</string>
 <string name="stop_probe_failed_title">无法读取电视信息</string><string name="stop_probe_failed_body">读取过程中电视停止响应。没有进行任何更改。请确认电视仍处于开机状态，然后重试。</string><string name="stop_probe_failed_primary">重试</string><string name="stop_probe_failed_secondary">返回</string><string name="stop_probe_failed_tertiary">显示详情</string>
 <string name="stop_plan_refused_title">无法为这台电视制定安全方案</string><string name="stop_plan_refused_body">电视已响应，但检测到的内容不符合我们确认安全的操作方案，因此已在执行任何操作前停止。没有进行任何更改。提交问题报告可以帮助我们了解原因并修复问题。</string>
+    <string name="notify_rationale">电视需要执行操作时，我们会提醒你查看屏幕。请允许通知，以便手机放在口袋里时也能及时收到提醒。</string>
+    <string name="found_title">{count, plural, =0 {没有需要关闭的项目。要启用新主屏幕吗？} one {发现 1 个可以关闭的项目} other {发现 # 个可以关闭的项目}}</string>
+    <string name="found_headline">{count, plural, =0 {没有需要关闭的项目} one {个可以关闭的项目} other {个可以关闭的项目}}</string>
+    <string name="found_overline">检测结果</string>
+    <string name="found_zero_body">这台电视已经很整洁了。</string>
+    <string name="found_title_zero_kept">没有需要关闭的项目</string>
+    <string name="found_zero_kept_body">这台电视已经很整洁，并且保留了自己的主屏幕，因此无需进行任何操作。</string>
+    <string name="found_zero_kept_unknown_body">我们尚不能确定这台电视上是否有需要处理的项目，而且它保留了自己的主屏幕。你可以提交报告，帮助我们完善这台电视的清理列表。</string>
+    <string name="found_switch_home">切换主屏幕</string>
+    <string name="found_group_ads">广告和赞助内容</string>
+    <string name="found_group_tracking">跟踪和数据分析</string>
+    <string name="found_group_nobody">不需要的预装应用</string>
+    <string name="found_group_brand">{brand} 附加内容</string>
+    <string name="found_group_shop">商店和演示模式</string>
+    <string name="found_group_needed">新主屏幕所需组件</string>
+    <string name="found_group_count_cd">{group}：{count, plural, other {# 项}}</string>
+    <string name="found_see_list">查看列表</string>
+    <string name="found_keep_intro">以下常用功能会保留：</string>
+    <string name="found_keep_paragraph">以下常用功能会保留：{apps}、{fixed}。</string>
+    <string name="found_keep_paragraph_no_apps">以下常用功能会保留：{fixed}。</string>
+    <string name="found_keep_fixed">电视直播和 HDMI、遥控器、键盘、Chromecast、语音助手以及系统更新</string>
+    <string name="found_keep_fixed_fire">电视直播和 HDMI、遥控器、键盘、语音助手以及系统更新</string>
+    <string name="found_home_row">主屏幕：{dock}</string>
+    <string name="found_home_row_rows">主屏幕：{dock}，下方还有 {count, plural, other {# 个应用}}</string>
+    <string name="found_home_row_cd">主屏幕快捷栏：{dock}</string>
+    <string name="found_home_change">更改</string>
+    <string name="found_home_row_empty">你的新主屏幕</string>
+    <string name="found_safety">我们会先保存还原点，因此所有更改都可以恢复。</string>
+    <string name="found_make_clean">开始清理</string>
+    <string name="found_customise">自定义</string>
+    <string name="found_replaces_launcher">这会替换电视上现有的主屏幕应用。原有外观、应用顺序、设置和卡片数据将重新初始化。</string>
+    <string name="found_no_lock">这部手机没有设置屏幕锁定，因此我们无法再次确认你的身份。</string>
+    <string name="found_unknown_title">{count, plural, =0 {没有发现可以确认的项目} one {发现 1 个可以确认的项目} other {发现 # 个可以确认的项目}}</string>
+    <string name="found_unknown_headline">{count, plural, =0 {没有可确认的项目} one {个可确认的项目} other {个可确认的项目}}</string>
+    <string name="found_unknown_body">我们还没有遇到过完全相同的电视型号，因此会谨慎处理。为这台电视建立清单后，才能关闭更多项目。提交报告可以帮助我们完善清单。</string>
+    <string name="found_help_add_tv">帮助添加这台电视</string>
+    <string name="found_report_sent">你已于 {date} 提交这台电视的报告。有进展时我们会在你的 Issue 中更新。你也可以再次提交。</string>
+    <string name="fire_tv_name">Fire TV</string>
+    <string name="kept_outcome">电视将继续使用自己的主屏幕。</string>
+    <string name="helper_outcome">按 Home 键将打开新的主屏幕。</string>
+    <string name="helper_outcome_body">电视自带主屏幕仍保持启用，因此投屏功能可以继续使用。</string>
+    <string name="kept_outcome_short">主屏幕：电视自带</string>
+    <string name="kept_why">原因</string>
+    <string name="kept_why_title">为什么保留电视自带主屏幕</string>
+    <string name="kept_what_changes_title">哪些情况可以改变这一结果</string>
+    <string name="kept_tv_list">查看支持新主屏幕的电视列表</string>
+    <string name="kept_clean_up_note">我们仍会关闭广告、跟踪服务和后台应用。由电视自带主屏幕展示的广告仍会保留。</string>
+    <string name="kept_reason_tv_refuses">{brand} 电视只允许使用自带主屏幕。</string>
+    <string name="kept_reason_fire_tv">Fire TV 只允许使用自带主屏幕。</string>
+    <string name="kept_reason_old_android">新主屏幕需要 Android 8 或更高版本。</string>
+    <string name="kept_reason_unknown_home">我们还不了解这台电视的主屏幕，无法安全地切换。</string>
+    <string name="kept_reason_wizard_wifi">电视的 Wi-Fi 信息由设置向导保存，而切换主屏幕需要关闭该向导。</string>
+    <string name="kept_reason_wizard_wifi_unknown">我们无法确认是谁保存了电视的 Wi-Fi 信息。</string>
+    <string name="kept_reason_casting">切换后，每次重启电视都会导致手机投屏失效。</string>
 </resources>
