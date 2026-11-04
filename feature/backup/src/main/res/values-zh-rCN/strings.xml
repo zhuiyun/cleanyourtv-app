@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="action_back">返回</string><string name="action_cancel">取消</string><string name="action_ok">确定</string><string name="action_done">完成</string>
+<string name="gate_title">确认你的身份</string><string name="gate_subtitle">在更改 {tv} 上的设置之前</string><string name="gate_negative">取消</string><string name="gate_failed">无法确认你的身份，因此没有进行任何更改。</string>
+<string name="restore_title">还原点</string><string name="restore_current">保存时间：{date}</string><string name="restore_none">尚无还原点。首次更改电视前会自动保存一个还原点。</string><string name="restore_read_failed">读取还原点时发生错误</string><string name="restore_row_undo">撤销所有更改</string><string name="restore_row_undo_sub">将电视恢复到 {date} 时的状态</string><string name="restore_row_save">保存副本</string><string name="restore_row_save_sub">将 ZIP 文件保存到你选择的位置。</string><string name="restore_row_factory">恢复出厂设置前</string><string name="restore_row_factory_sub">重新启用设置向导，确保电视恢复出厂设置后可以正常启动。</string><string name="restore_preview_title">这会将电视恢复到 {date} 时的状态：</string><string name="restore_preview_home">重新启用电视自带主屏幕（{name}）</string><string name="restore_preview_wizard">重新启用设置向导</string><string name="restore_launcher_title">新主屏幕</string><string name="restore_launcher_keep">保留安装，将其作为普通应用使用</string><string name="restore_launcher_remove">从电视移除</string>
+    <string name="restore_preview_things">{count, plural, one {重新启用 # 个项目} other {重新启用 # 个项目}}</string>
+    <string name="restore_preview_helper">关闭 Home 键辅助功能</string>
+    <string name="restore_preview_screensaver">将时钟屏保恢复为电视自带屏保</string>
+    <string name="restore_preview_keyboard">将键盘恢复为电视自带键盘</string>
+    <string name="restore_launcher_remove_note">移除后，也会删除电视上卡片已提供的答案模块数据。</string>
+    <string name="restore_preview_button">恢复所有内容</string>
+    <string name="restore_confirm_title">恢复所有内容？</string>
+    <string name="restore_confirm_body">广告和跟踪功能也会重新启用。你随时可以再次运行清理。</string>
+    <string name="restore_confirm_button">恢复所有内容</string>
+    <string name="restore_working_title">正在恢复所有内容</string>
+    <string name="restore_working_things">正在恢复项目：已完成 {done} 项，共 {total} 项……</string>
+    <string name="restore_working_home">正在恢复电视自带主屏幕……</string>
+    <string name="restore_working_wizard">正在重新启用设置向导……</string>
+    <string name="restore_done_title">所有内容均已恢复</string>
+    <string name="restore_done_body">电视已恢复到 {date} 时的状态。还原点仍会保留，以便你改变主意时再次使用。</string>
+    <string name="restore_clean_again">重新运行设置</string>
+    <string name="restore_factory_title">恢复出厂设置前</string>
+    <string name="restore_factory_body">恢复出厂设置会重新启用电视的设置向导。我们现在先将它打开，确保电视之后可以正常启动。</string>
+    <string name="restore_factory_button">重新启用设置向导</string>
+    <string name="restore_factory_working">正在重新启用设置向导……</string>
+    <string name="restore_factory_done">设置向导已重新启用，现在可以恢复电视出厂设置。</string>
+    <string name="restore_export_saved">还原点副本已保存。</string>
+    <string name="restore_export_failed">无法保存副本，请尝试其他位置。</string>
+</resources>

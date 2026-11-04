@@ -210,6 +210,7 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
 
     // RFC-REACH-1: "Copy connection details" (the debugging step, App settings): made when asked for, about 10 s, then
     // copied, and with Share also handed to the share sheet. One at a time.
+    val connectionDetailsLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.appsettings_details)
     var details by remember { mutableStateOf(DetailsUi()) }
     fun collectDetails(andShare: Boolean) {
         if (details.busy) return
@@ -218,7 +219,7 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
             val text = runCatching { withContext(Dispatchers.IO) { graph.manageDeps.connectionDetails() } }
                 .onFailure { CytLog.w("connection details not made", it) }.getOrNull()
             if (text != null) {
-                copyText(context, text, label = "connection details")
+                copyText(context, text, label = connectionDetailsLabel)
                 if (andShare) runCatching { share(text) }
             }
             details = DetailsUi(copied = text != null)
@@ -226,6 +227,8 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
     }
 
     val undoLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.action_undo)
+    val reportLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.report_preview_label)
+    val errorLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.connect.R.string.door_copy_error)
     val notificationPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
     // 0.4.0 "Your photo" on the Look sheet: the system photo picker, images only, no permission.
     var onPhoto by remember { mutableStateOf<((android.net.Uri) -> Unit)?>(null) }
@@ -253,7 +256,7 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
             is ManageEffect.Navigate -> go(e.key)
             is ManageEffect.Share -> share(e.text)
             is ManageEffect.OpenUrl -> runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(e.url))) }
-            is ManageEffect.Copy -> copyText(context, e.text, label = "report")
+            is ManageEffect.Copy -> copyText(context, e.text, label = reportLabel)
             ManageEffect.HapticLight -> haptic(HapticFeedbackConstants.CLOCK_TICK)
             ManageEffect.HapticDouble -> haptic(HapticFeedbackConstants.LONG_PRESS)
             is ManageEffect.CreateDocument -> onDocument(e.suggestedName)
@@ -284,7 +287,7 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
                     LaunchedEffect(m) { m.effects.collect { onSetupEffect(it) } }
                     BackHandler { if (!m.back()) { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) else onExit() } }
                     SecureWindow((state as? SetupState.OpenDoor)?.phase == DoorPhase.ALLOW)
-                    if (isConnectState(state)) ConnectFlow(state, extras, m, onReturning = { go("returning") }, onCopyError = { copyText(context, it, "error") })
+                    if (isConnectState(state)) ConnectFlow(state, extras, m, onReturning = { go("returning") }, onCopyError = { copyText(context, it, errorLabel) })
                     else SetupFlow(state, extras, m, onCopyCommands = { copyText(context, it) }, onRoute = { go(it) }, photos = photoPicker,
                         onOpenUrl = { url -> scope.launch { onManageEffect(ManageEffect.OpenUrl(url)) } })
                 }
