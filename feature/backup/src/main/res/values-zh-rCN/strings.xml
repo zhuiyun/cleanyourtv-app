@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="action_back">返回</string><string name="action_cancel">取消</string><string name="action_ok">确定</string><string name="action_done">完成</string>
+<string name="gate_title">确认你的身份</string><string name="gate_subtitle">在更改 {tv} 上的设置之前</string><string name="gate_negative">取消</string><string name="gate_failed">无法确认你的身份，因此没有进行任何更改。</string>
+<string name="restore_title">还原点</string><string name="restore_current">保存时间：{date}</string><string name="restore_none">尚无还原点。首次更改电视前会自动保存一个还原点。</string><string name="restore_read_failed">读取还原点时发生错误</string><string name="restore_row_undo">撤销所有更改</string><string name="restore_row_undo_sub">将电视恢复到 {date} 时的状态</string><string name="restore_row_save">保存副本</string><string name="restore_row_save_sub">将 ZIP 文件保存到你选择的位置。</string><string name="restore_row_factory">恢复出厂设置前</string><string name="restore_row_factory_sub">重新启用设置向导，确保电视恢复出厂设置后可以正常启动。</string><string name="restore_preview_title">这会将电视恢复到 {date} 时的状态：</string><string name="restore_preview_home">重新启用电视自带主屏幕（{name}）</string><string name="restore_preview_wizard">重新启用设置向导</string><string name="restore_launcher_title">新主屏幕</string><string name="restore_launcher_keep">保留安装，将其作为普通应用使用</string><string name="restore_launcher_remove">从电视移除</string>
+</resources>
