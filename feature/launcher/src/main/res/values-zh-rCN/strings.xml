@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="action_back">返回</string><string name="action_cancel">取消</string><string name="action_done">完成</string><string name="action_undo">撤销</string>
+<string name="gate_title">确认你的身份</string><string name="gate_subtitle">在更改 {tv} 上的设置之前</string><string name="gate_negative">取消</string><string name="gate_failed">无法确认你的身份，因此没有进行任何更改。</string>
+<string name="home_title">主屏幕</string><string name="home_row_dock">快捷栏</string><string name="home_row_look">外观</string><string name="home_row_stock">使用电视自带主屏幕</string><string name="home_row_stock_note">恢复电视自带主屏幕。当前主屏幕仍会保留安装，你可以随时切换回来。</string><string name="home_drift_banner">电视上的主屏幕设置与上次设置时不同。</string><string name="home_drift_restore">重新应用我的设置</string><string name="home_applying">正在更新电视主屏幕……</string><string name="home_snackbar_done">已完成。</string><string name="home_not_on_tv_lead">{tv} 正在使用自己的主屏幕。快捷栏和外观设置属于新的主屏幕，而这台电视尚未安装它。</string>
+</resources>
