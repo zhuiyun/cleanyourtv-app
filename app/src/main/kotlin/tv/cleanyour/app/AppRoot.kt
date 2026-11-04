@@ -210,6 +210,7 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
 
     // RFC-REACH-1: "Copy connection details" (the debugging step, App settings): made when asked for, about 10 s, then
     // copied, and with Share also handed to the share sheet. One at a time.
+    val connectionDetailsLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.appsettings_details)
     var details by remember { mutableStateOf(DetailsUi()) }
     fun collectDetails(andShare: Boolean) {
         if (details.busy) return
@@ -226,7 +227,6 @@ fun AppRoot(graph: AppGraph, start: Dest, onExit: () -> Unit) {
     }
 
     val undoLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.action_undo)
-    val connectionDetailsLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.appsettings_details)
     val reportLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.manage.R.string.report_preview_label)
     val errorLabel = androidx.compose.ui.res.stringResource(tv.cleanyour.feature.connect.R.string.door_copy_error)
     val notificationPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
