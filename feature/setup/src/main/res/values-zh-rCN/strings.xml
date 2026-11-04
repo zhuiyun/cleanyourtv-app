@@ -153,7 +153,7 @@
     <string name="working_step_home_done">Home 键已切换</string>
     <string name="working_step_done_cd">{step}，已完成</string>
     <string name="customise_live">已关闭 {off} 项，共 {total} 项</string>
-    <string name="customise_dock_row_rows">快捷栏：{names}，下方还有 {count, plural, other {# 个应用}}，分布在 {rows, plural, one {一行} other {多行}}中</string>
+    <string name="customise_dock_row_rows">快捷栏：{names}，下方还有 {count, plural, one {# 个应用} other {# 个应用}}，分布在 {rows, plural, one {一行} other {多行}}中</string>
     <string name="customise_look_row_count">外观：{theme}，每行 {count, plural, other {# 个应用}}</string>
     <string name="customise_snackbar_off_home_back">将关闭 {name}。新的主屏幕已重新加入计划。</string>
     <string name="customise_snackbar_kept_home_own">将保留 {name}。电视会继续使用自带主屏幕。</string>
@@ -213,7 +213,7 @@
     <string name="stop_undone_primary">确定</string>
     <string name="stop_undone_secondary">显示详情</string>
     <string name="stop_connection_lost_title">电视停止响应</string>
-    <string name="stop_connection_lost_body">电视在关闭 {done} 项（共 {total} 项）后停止响应。通常几秒钟后就会恢复。</string>
+    <string name="stop_connection_lost_body">{total, plural, one {电视在关闭 {done} 项（共 # 项）后停止响应。通常几秒钟后就会恢复。} other {电视在关闭 {done} 项（共 # 项）后停止响应。通常几秒钟后就会恢复。}}</string>
     <string name="stop_connection_lost_reconnecting">正在重新连接……</string>
     <string name="stop_connection_lost_back">返回。要继续吗？</string>
     <string name="stop_connection_lost_primary">继续剩余操作</string>
