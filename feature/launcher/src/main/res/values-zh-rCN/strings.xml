@@ -58,4 +58,21 @@
     <string name="home_update_done">主屏幕已更新至版本 {version}。</string>
     <string name="home_stock_preview_title">使用电视自带主屏幕？</string>
     <string name="home_stock_preview_body">我们会重新启用电视自带主屏幕并将其设为默认。新主屏幕仍会保留安装。</string>
+    <string name="home_stock_confirm">使用电视自带主屏幕</string>
+    <string name="home_stock_working">正在恢复电视自带主屏幕……</string>
+    <string name="home_stock_done">电视自带主屏幕已恢复。我们的主屏幕仍会保留安装。</string>
+    <string name="theme_default">默认</string>
+    <string name="home_look_ended_banner">{picture} 已结束。要将之前的图片恢复到电视上吗？</string>
+    <string name="home_look_ended_restore">恢复</string>
+    <string name="dock_title">你的快捷栏</string>
+    <string name="dock_body">底部最多可放置 {count, spellout} 个应用。拖动应用旁边的圆点即可调整顺序。</string>
+    <string name="dock_waiting">网格中还有 {count, plural, other {# 个应用}}，等待你在“外观”中增加每行显示的应用数量。</string>
+    <string name="helper_card_title">Home 键辅助功能</string>
+    <string name="helper_card_on">Home 键会通过一个小型辅助程序打开新主屏幕。电视自带主屏幕仍保持启用，因此投屏功能可以继续使用。</string>
+    <string name="helper_card_off_by_tv">电视已关闭辅助程序（可能由重启或清理应用导致）。重新运行设置即可重新启用。</string>
+    <string name="helper_card_no_redirect">辅助程序已启用，但电视上的外观设置没有指定电视主屏幕，因此它不会执行操作。你可以关闭辅助程序，或重新运行设置。</string>
+    <string name="helper_card_redirect_only">新主屏幕已为辅助程序完成设置，但辅助程序当前处于关闭状态。重新运行设置即可重新启用。</string>
+    <string name="helper_card_escape">在电视上打开“设置”→“无障碍”→“Home 键”，也可以关闭此功能。</string>
+    <string name="helper_card_apps_only">Google TV 仍会在后台运行。“仅应用”模式可以减少后台活动，但也会关闭搜索和语音助手；你可以在电视设置中重新启用它们。</string>
+    <string name="helper_card_switch_off">关闭</string>
 </resources>
