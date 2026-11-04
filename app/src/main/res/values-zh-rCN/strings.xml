@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">清理电视</string>
+    <string name="app_channel_setup_name">正在设置电视</string>
+    <string name="app_channel_setup_description">当手机更改电视设置时显示操作进度，并提醒你何时查看电视屏幕。</string>
+    <string name="app_restore_read_failed">读取还原点时发生错误</string>
+</resources>
