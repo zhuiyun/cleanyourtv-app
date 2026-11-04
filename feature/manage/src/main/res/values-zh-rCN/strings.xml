@@ -165,4 +165,7 @@
     <string name="report_issue_error">这不是此应用 GitHub 仓库中的有效 Issue 链接。</string>
     <string name="report_issue_save">记住链接</string>
     <string name="report_issue_open">打开 Issue</string>
+    <string name="debugstep_address">输入电视地址</string>
+    <string name="debugstep_row_typed">电视在你输入的地址上有响应</string>
+    <string name="debugstep_row_typed_no">请在电视的“设置”→“网络”中核对地址，并确保电视上的 USB 调试已开启。</string>
 </resources>
