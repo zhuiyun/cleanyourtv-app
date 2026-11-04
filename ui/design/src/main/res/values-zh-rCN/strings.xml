@@ -330,4 +330,12 @@
     <string name="cyt_look_file_copy">复制</string>
     <string name="cyt_look_file_copied">已复制。</string>
     <string name="cyt_photo_after">尚未发送任何内容。准备好后，点击“应用到电视”。</string>
+    <plurals name="cyt_show_more">
+        <item quantity="one">再显示 %d 项</item>
+        <item quantity="other">再显示 %d 项</item>
+    </plurals>
+    <plurals name="cyt_earlier_steps">
+        <item quantity="one">之前还有 %d 个步骤</item>
+        <item quantity="other">之前还有 %d 个步骤</item>
+    </plurals>
 </resources>
