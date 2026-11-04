@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="action_back">返回</string><string name="action_cancel">取消</string><string name="action_ok">确定</string><string name="action_done">完成</string><string name="action_undo">撤销</string>
+<string name="gate_title">确认你的身份</string><string name="gate_subtitle">在更改 {tv} 上的设置之前</string><string name="gate_negative">取消</string><string name="gate_failed">无法确认你的身份，因此没有进行任何更改。</string>
+<string name="notify_channel_name">正在设置电视</string><string name="notify_channel_description">手机更改电视设置时显示进度，并提醒你何时查看电视。</string><string name="notify_progress" formatted="false">正在设置 {tv}，{percent}%</string><string name="notify_look">请查看电视。点击此通知进行响应。</string><string name="notify_rationale_allow">允许通知</string><string name="notify_rationale_skip">暂不</string>
+<string name="probing_line">正在读取电视上的信息……</string><string name="probing_progress_cd">正在读取电视上的信息</string>
+<string name="stop_probe_failed_title">无法读取电视信息</string><string name="stop_probe_failed_body">读取过程中电视停止响应。没有进行任何更改。请确认电视仍处于开机状态，然后重试。</string><string name="stop_probe_failed_primary">重试</string><string name="stop_probe_failed_secondary">返回</string><string name="stop_probe_failed_tertiary">显示详情</string>
+<string name="stop_plan_refused_title">无法为这台电视制定安全方案</string><string name="stop_plan_refused_body">电视已响应，但检测到的内容不符合我们确认安全的操作方案，因此已在执行任何操作前停止。没有进行任何更改。提交问题报告可以帮助我们了解原因并修复问题。</string>
+</resources>
