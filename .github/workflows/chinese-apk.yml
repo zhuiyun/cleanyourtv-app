@@ -44,6 +44,20 @@ jobs:
           test -n "$KEY_PASSWORD" || { echo "::error::Missing CYT_KEY_PASSWORD repository secret"; exit 1; }
           test -n "$STORE_PASSWORD" || { echo "::error::Missing CYT_KEYSTORE_PASSWORD repository secret"; exit 1; }
 
+      - name: Validate keystore and certificate before building
+        env:
+          KEYSTORE_B64: ${{ secrets.CYT_KEYSTORE_BASE64 }}
+          KEY_ALIAS: ${{ secrets.CYT_KEY_ALIAS }}
+          STORE_PASSWORD: ${{ secrets.CYT_KEYSTORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/signing"
+          printf '%s' "$KEYSTORE_B64" | base64 --decode > "$RUNNER_TEMP/signing/cyt-release.jks"
+          keytool -list -v -keystore "$RUNNER_TEMP/signing/cyt-release.jks" -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS" > "$RUNNER_TEMP/signing/cert.txt"
+          EXPECTED='A7:5A:27:8D:80:B7:61:1F:BC:F3:3F:10:C8:CC:0A:46:28:75:16:F7:C4:92:D0:FF:A0:40:C7:2C:7D:F0:3A:67'
+          grep -Fqi "$EXPECTED" "$RUNNER_TEMP/signing/cert.txt" || { echo "::error::Configured keystore does not match the public release certificate"; exit 1; }
+          rm -f "$RUNNER_TEMP/signing/cyt-release.jks" "$RUNNER_TEMP/signing/cert.txt"
+
       - name: Build release APK
         run: |
           chmod +x ./gradlew
