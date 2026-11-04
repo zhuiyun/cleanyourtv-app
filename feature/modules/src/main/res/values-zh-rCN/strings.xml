@@ -3,4 +3,57 @@
 <string name="action_back">返回</string><string name="action_cancel">取消</string><string name="action_ok">确定</string><string name="action_done">完成</string><string name="action_undo">撤销</string>
 <string name="gate_title">确认你的身份</string><string name="gate_subtitle">在更改 {tv} 上的设置之前</string><string name="gate_negative">取消</string><string name="gate_failed">无法确认你的身份，因此没有进行任何更改。</string>
 <string name="modules_title">卡片和模块</string><string name="modules_state_shown">已显示</string><string name="modules_state_hidden">已隐藏</string><string name="modules_state_over_limit">超出数量限制</string><string name="modules_over_limit_note">主屏幕最多显示八张卡片。</string><string name="modules_remove">从电视移除</string><string name="modules_show_card">显示卡片</string><string name="modules_cards_off_note">这台电视的主屏幕已关闭卡片功能。显示卡片时，电视会要求你确认。</string><string name="modules_update">更新</string><string name="modules_add">添加</string><string name="modules_update_available">有可用版本：{version}</string><string name="modules_empty">还没有卡片。添加一张即可显示在主屏幕上。</string><string name="modules_normal_app_note">此内容在电视上会显示为普通应用</string><string name="modules_remove_title">要从 {tv} 移除 {name} 吗？</string><string name="modules_remove_body">这会从电视上移除该应用，不会更改主屏幕或其他卡片。</string><string name="modules_remove_confirm">移除</string><string name="modules_removed">已移除 {name}。</string><string name="addmodule_title">添加到 {tv}</string><string name="addmodule_search_hint">搜索</string><string name="addmodule_search_cd">搜索模块</string>
+    <string name="modules_state_cd">{name}：{state}</string>
+    <string name="modules_update_consent">{name} {version} 现在还需要以下权限：{permissions}。允许此版本吗？</string>
+    <string name="modules_update_skip">跳过此版本</string>
+    <string name="addmodule_open_source">开源代码</string>
+    <string name="addmodule_size">{size, plural, other {# MB}}</string>
+    <string name="addmodule_tier_community">社区</string>
+    <string name="addmodule_tier_verified">已审核</string>
+    <string name="addmodule_tier_paused">已暂停</string>
+    <string name="addmodule_loading">正在加载列表……</string>
+    <string name="addmodule_empty">没有符合搜索条件的模块。</string>
+    <string name="addmodule_refresh">刷新</string>
+    <string name="addmodule_footer">所有模块均由社区成员制作，并经过自动检查。</string>
+    <string name="addmodule_footer_link">查看制作方信息</string>
+    <string name="addmodule_tiers_title">查看制作方信息</string>
+    <string name="addmodule_tiers_community">社区：由应用之外的开发者制作，并根据作者发布的内容进行自动检查。</string>
+    <string name="addmodule_tiers_verified">已审核：该版本已经由具名审核者检查。</string>
+    <string name="addmodule_tiers_paused">已暂停：维护者暂时停止提供此模块。</string>
+    <string name="module_what_title">它可以在电视上执行什么操作</string>
+    <string name="module_who_title">制作方</string>
+    <string name="module_runs_background">后台运行：{reason}</string>
+    <string name="module_no_background">不包含后台服务</string>
+    <string name="module_perm_can_cd">{statement}。允许执行此操作。</string>
+    <string name="module_perm_cannot_cd">{statement}。不会执行此操作。</string>
+    <string name="module_maker">GitHub 用户 {handle}</string>
+    <string name="module_version_line">版本 {version}，发布于 {date}</string>
+    <string name="module_not_reviewed">已通过自动检查，尚未由人工审核。</string>
+    <string name="module_key_line">密钥 {key}，与电视上的密钥一致</string>
+    <string name="module_source">源代码</string>
+    <string name="module_report">报告问题</string>
+    <string name="module_hero_badge">电视上的卡片</string>
+    <string name="module_add">添加到 {tv}</string>
+    <string name="module_outside_store">附加模块从作者的 GitHub Releases 下载，不经过应用商店，也不由 F-Droid 构建或检查。</string>
+    <string name="module_add_turns_cards_on">添加模块会为这台电视的主屏幕启用卡片功能；显示卡片前，电视会再次询问。</string>
+    <string name="module_paused_reason">维护者已暂停：{reason}</string>
+    <string name="module_install_adding">正在添加 {name}……</string>
+    <string name="module_install_downloading">正在下载（{size} MB）……</string>
+    <string name="module_install_checking">正在检查文件是否与作者发布的版本一致……</string>
+    <string name="module_install_installing">正在安装到电视……</string>
+    <string name="module_install_asking">正在请求电视显示确认提示……</string>
+    <string name="module_install_failed">无法将 {name} 安装到电视。其他内容没有发生变化。</string>
+    <string name="cardprompt_title">请查看电视</string>
+    <string name="cardprompt_art_keep">保持隐藏</string>
+    <string name="cardprompt_body">电视会再次向你确认，避免任何应用未经允许就在主屏幕上添加内容。</string>
+    <string name="cardprompt_instruction">请使用遥控器选择“显示卡片”。电视上的密钥应为 {key}，与此处一致。</string>
+    <string name="cardprompt_waiting">正在等待你在电视上确认……</string>
+    <string name="cardprompt_later">稍后操作：在电视的“设置”选项上长按确定键，即可找到“模块卡片”。</string>
+    <string name="cardprompt_shown">{name} 已显示在主屏幕上。</string>
+    <string name="cardprompt_hidden">{name} 已安装并保持隐藏。它仍会作为普通应用显示。你可以随时在“卡片和模块”中显示它的卡片。</string>
+    <string name="cardprompt_signer_changed">{name} 的新版本使用了不同于之前的签名密钥。这种情况并不常见，因此电视会再次询问。如果你不确定更新来源，请选择“保持隐藏”。</string>
+    <string name="index_failure_bad_signature">无法确认模块列表的真实性，因此没有使用该列表。电视上的内容未受影响。</string>
+    <string name="index_failure_unknown_key">模块列表使用了无法识别的密钥签名，因此没有使用该列表。电视上的内容未受影响。</string>
+    <string name="index_failure_revoked_key">模块列表使用的签名密钥已被撤销，因此没有使用该列表。电视上的内容未受影响。</string>
+    <string name="index_failure_bad_keys_file">受信任密钥列表未通过检查，因此没有使用模块列表。电视上的内容未受影响。</string>
 </resources>
