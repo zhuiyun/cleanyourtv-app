@@ -138,4 +138,7 @@
     <string name="stop_wrong_network_secondary">我已连接到正确网络，重新搜索</string>
     <string name="stop_identity_changed_body">此地址上的电视不是之前设置的 {name}。它的地址可能已经变化，也可能被另一台电视占用。我们已在执行任何更改前停止。</string>
     <string name="family_tcl_step1">在电视上打开“设置”→“关于”→“本机信息”，然后使用遥控器依次按上、下、左、右。</string>
+    <string name="pairing_steps_cmd_pair" translatable="false">adb pair ADDRESS:PAIR_PORT</string>
+    <string name="pairing_steps_cmd_connect" translatable="false">adb connect ADDRESS:CONNECT_PORT</string>
+    <string name="pairing_steps_cmd_tcpip" translatable="false">adb -s ADDRESS:CONNECT_PORT tcpip 5555</string>
 </resources>
