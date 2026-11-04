@@ -19,7 +19,7 @@
     <string name="cyt_countdown_60">还剩一分钟。请确认或返回。</string>
     <string name="cyt_countdown_30">还剩 30 秒。</string>
     <string name="cyt_countdown_10">还剩 10 秒。</string>
-    <string name="cyt_countdown_left">剩余 {0}</string>
+    <string name="cyt_countdown_left">剩余 %1$s</string>
     <string name="cyt_state_done">已完成</string>
     <string name="cyt_state_doing">进行中</string>
     <string name="cyt_state_upcoming">即将开始</string>
