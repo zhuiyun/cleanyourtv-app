@@ -23,3 +23,5 @@ python3 -m unittest discover -s scripts/tests -p 'test_chinese_release.py' -v
 ```
 
 测试用本地模拟的 GitHub CLI 覆盖正常发布、预发布、旧提交、重复运行、草稿恢复、下载损坏、冲突附件、冲突标签和访问错误，不访问网络。
+
+手动构建：在 GitHub 的 Actions 中选择 `Chinese APK (signed)`，点击 `Run workflow` 并选择 `main` 或中文功能分支。不要用上游 `release` 流程替代此中文签名流程。
